@@ -1,5 +1,5 @@
 # Building a Better ChatGPT
-## Grounding LLMs in Truth in Under 30 Lines of Code
+## Grounding LLMs in Truth With Under 30 Lines of Code
 
 This demo is part of a presentation at an SF Python meetup in March 2023.
 
