@@ -18,33 +18,33 @@ sentence_transformers==2.2.2
 
 ## Part 1: Manual Embedding and Generation
 
-Code: `basic.py`
+**Code:** `basic.py`
 
 Leverage [Sentence Transformer embeddings](https://www.sbert.net/) and basic matrix multiplication to identify the parts of a document most relevent to a user query. These parts will then be carefully crafted into a prompt, along with the user's query, before being sent to the OpenAI GPT-3 API.
 
 The result will be a coherent summary that contains citations to segments in our original document, resulting in a shorter and more precise summary than ChatGPT that is also grounded in truth.
 
-Line total: ~120
+**Line total:** ~120
 
 ## Part 2: Chroma
 
-Code: `using_chromadb.py`
+**Code:** `using_chromadb.py`
 
 Lots of abstractions have been built out for standard language model operations. We will replace our hand-rolled Sentence Transformer + Numpy approach with [Chroma](https://www.trychroma.com/), an open-source embedding database that can run locally.
 
 Our result will be similar to the one above.
 
-Line total: ~100
+**Line total:** ~100
 
 ## Part 3: Langchain
 
-Code: `using_langchain.py`
+**Code:** `using_langchain.py`
 
 We will compress the amount of code we've written even further by using [Langchain](https://langchain.readthedocs.io/en/latest/) and its `load_qa_with_sources_chain`. We will still use Chroma, but with [OpenAI embeddings](https://platform.openai.com/docs/guides/embeddings) instead.
 
 While this is the simplest solution with the least amount of code, it is much harder to edit the prompt and have fine-grained control over the embeddings part.
 
-Line total: ~30
+**Line total:** ~30
 
 ## Extensions
 - Implement a chat interface and incorporate chat history into the prompt
