@@ -16,7 +16,7 @@ openai==0.26.4
 sentence_transformers==2.2.2
 ```
 
-### Part 1: Manual Embedding and Generation
+## Part 1: Manual Embedding and Generation
 
 Code: `basic.py`
 
@@ -26,7 +26,7 @@ The result will be a coherent summary that contains citations to segments in our
 
 Line total: ~120
 
-### Part 2: Chroma
+## Part 2: Chroma
 
 Code: `using_chromadb.py`
 
@@ -36,7 +36,7 @@ Our result will be similar to the one above.
 
 Line total: ~100
 
-### Part 3: Langchain
+## Part 3: Langchain
 
 Code: `using_langchain.py`
 
@@ -46,7 +46,7 @@ While this is the simplest solution with the least amount of code, it is much ha
 
 Line total: ~30
 
-### Extensions
+## Extensions
 - Implement a chat interface and incorporate chat history into the prompt
 - Try out other types of embeddings or a vector database
 - Test out the code on different text files, or more complex documents using [Langchain's dataloaders](https://langchain.readthedocs.io/en/latest/modules/document_loaders.html).
