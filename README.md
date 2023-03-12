@@ -16,6 +16,14 @@ openai==0.26.4
 sentence_transformers==2.2.2
 ```
 
+You also need an OpenAI API key. You can generate one [here](https://platform.openai.com/account/api-keys).
+
+In order to run the code in this repo without any changes, you need to set an environment variable with your OpenAI key.
+
+You can do so by running the following command (after appropriately adding in your OpenAI API key).
+
+`export OPENAI_API_KEY="<YOUR_OPENAI_API_KEY>."`
+
 ## Part 1: Manual Embedding and Generation
 
 **Code:** `basic.py`
