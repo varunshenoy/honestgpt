@@ -1,4 +1,5 @@
 # Building a Better ChatGPT
+
 ## Grounding LLMs in Truth With Under 30 Lines of Code
 
 This demo is part of a presentation at an SF Python meetup in March 2023. The slides are also in this repo.
@@ -8,6 +9,7 @@ This demo is part of a presentation at an SF Python meetup in March 2023. The sl
 Run `pip3 install -r requirements.txt` in the root directory of the project.
 
 This will install the following packages:
+
 ```
 chromadb==0.3.11
 langchain==0.0.107
@@ -55,7 +57,12 @@ While this is the simplest solution with the least amount of code, it is much ha
 **Line total:** ~30
 
 ## Extensions
+
 - Implement a chat interface and incorporate chat history into the prompt
 - Try out other types of embeddings or a vector database
 - Test out the code on different text files, or more complex documents using [Langchain's dataloaders](https://langchain.readthedocs.io/en/latest/modules/document_loaders.html).
 - Play with other approximate nearest neighbors libraries, like FAISS, annoy, or hnswlib.
+
+---
+
+_Interested in having this workshop for your organization? [Reach out](mailto:vnshenoy@stanford.edu)!_
