@@ -77,24 +77,21 @@ def make_openai_call(context, question):
         sources += f"Source {idx + 1}: {paragraph}\n"
 
     prompt = generate_prompt(sources, question)
-
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=prompt,
-        temperature=0.3,
-        max_tokens=200,
-        top_p=1,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
-        stop=["\n"]
+    
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo", # or gpt-4
+        messages=[
+                {"role": "system", "content": "You are HonestGPT. Make sure all your answers cite the sources you used as in-text citations."},
+                {"role": "user", "content": f"{prompt}"},
+            ]
     )
 
-    return response['choices'][0]['text']
+    return response['choices'][0]['message']['content']
 
 
 if __name__ == "__main__":
     # read text file
-    paragraphs = read_text_file('coffee.txt', None)
+    paragraphs = read_text_file('texts/coffee.txt', None)
 
     # get embeddings
     embeddings = get_embeddings(paragraphs)

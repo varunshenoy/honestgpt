@@ -49,18 +49,15 @@ def make_openai_call(context, question):
 
     prompt = generate_prompt(sources, question)
 
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=prompt,
-        temperature=0.6,
-        max_tokens=200,
-        top_p=1,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
-        stop=["\n"]
+    response = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo", # or gpt-4
+        messages=[
+                {"role": "system", "content": "You are HonestGPT. Make sure all your answers cite the sources you used as in-text citations."},
+                {"role": "user", "content": f"{prompt}"},
+            ]
     )
 
-    return response['choices'][0]['text']
+    return response['choices'][0]['message']['content']
 
 
 def pretty_print_results(query, summary, sources):
